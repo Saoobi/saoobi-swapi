@@ -1,7 +1,13 @@
 import React from "react";
 
+import Router from "./Router";
+
 function App() {
-  return <h1>coucou</h1>;
+  return (
+    <main>
+      <Router />
+    </main>
+  );
 }
 
 export default App;

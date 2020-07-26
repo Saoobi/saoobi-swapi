@@ -19,11 +19,8 @@ async function searchOneItem(category, url, searchStr) {
   try {
     const response = await axios.get(urlPath);
     const res = response.data;
-    if (res.count > 0) {
-      return res.results;
-    } else {
-      return null;
-    }
+
+    return res.results;
   } catch (error) {
     console.error(error);
   }
@@ -37,8 +34,8 @@ async function searchAllItems(searchStr) {
 
   for (const [key, value] of Object.entries(categories)) {
     const resultSearchOneItem = await searchOneItem(key, value, searchStr);
-    if (Array.isArray(resultSearchOneItem)) {
-      resultSearch.push(resultSearchOneItem);
+    if (resultSearchOneItem) {
+      resultSearchOneItem.map((data) => resultSearch.push(data));
     }
   }
   return resultSearch;

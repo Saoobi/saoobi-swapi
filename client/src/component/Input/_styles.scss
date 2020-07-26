@@ -1,0 +1,17 @@
+.InputContainer {
+  display: flex;
+  border-bottom: solid 1px;
+  border-color: $White;
+  &__Icon {
+    padding: 6px;
+  }
+
+  &__Input {
+    font-size: 18px;
+    color: $Secondary;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+}

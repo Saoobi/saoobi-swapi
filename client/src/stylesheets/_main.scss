@@ -1,8 +1,8 @@
 html,
 body,
 main {
-  font-family: 'Khula', sans-serif;
-  background: $Primary;
+  font-family: "Khula", sans-serif;
+  background: $Background;
   min-height: $Content__Height;
   min-width: $Content__Width;
   padding: 0;
@@ -32,7 +32,15 @@ main {
     line-height: 40px;
     font-style: normal;
     font-weight: bold;
-    font-size: 35px;
+    font-size: 3px;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
   }
 
   h3 {
@@ -40,7 +48,7 @@ main {
     padding: 0;
     font-style: normal;
     font-weight: normal;
-    font-size: 22px;
+    font-size: 26px;
   }
 
   p {

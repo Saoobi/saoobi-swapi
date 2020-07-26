@@ -1,0 +1,8 @@
+.ItemList {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 450px);
+  gap: 50px;
+  justify-content: center;
+  margin-top: 50px;
+}

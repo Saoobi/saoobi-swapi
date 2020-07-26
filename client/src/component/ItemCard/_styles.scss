@@ -1,0 +1,38 @@
+.ItemCard {
+  display: flex;
+  border: 2px solid $Primary;
+  border-radius: 10px;
+  flex-direction: column;
+
+  &:hover {
+    cursor: pointer;
+    border: 2px solid $Secondary;
+    transform: scale(1.05);
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  &__Name {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    color: $Primary;
+  }
+
+  &__Category {
+    display: flex;
+    justify-content: flex-end;
+    color: $Primary;
+    margin-right: 10px;
+
+    &__Text {
+      margin-right: 5px;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
