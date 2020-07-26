@@ -1,0 +1,23 @@
+.FilmsItem > div {
+  line-height: 2;
+
+  span:first-child {
+    color: $Primary;
+    font-weight: lighter;
+    font-size: 28px;
+  }
+
+  span:nth-of-type(2) {
+    color: $Secondary;
+    font-weight: lighter;
+    font-size: 25px;
+  }
+
+  .ItemsGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin: 15px;
+  }
+}

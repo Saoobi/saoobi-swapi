@@ -1,20 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-import parseUrlItem from "../ParsingUrl";
+import { getItemCategoryById } from "../../API/";
+import parseUrlItem from "../../ParsingUrl";
 
-function ItemCard({ item, width = "450px", height = "240px" }) {
+function ItemCard({ url, width = "450px", height = "240px" }) {
   //Get id and category from url
-  const parsedUrlItem = parseUrlItem(item.url);
+  const parsedUrlItem = parseUrlItem(url);
   const category = parsedUrlItem.category;
   const id = parsedUrlItem.id;
-
+  const [itemName, setItemName] = useState("");
   //First letter uppercase
   const categoryText =
     parsedUrlItem.category.slice(0, 1).toUpperCase() +
     parsedUrlItem.category.slice(1, parsedUrlItem.category.length);
 
+  //Get name of Item
+  getItemCategoryById(category, id).then((result) => {
+    setItemName(result.name || result.title);
+  });
   return (
     <Link
       className="ItemCard"
@@ -22,7 +27,7 @@ function ItemCard({ item, width = "450px", height = "240px" }) {
       to={`/item/${category}/${id}`}
     >
       <div className="ItemCard__Name">
-        <h2>{item.name}</h2>
+        <h2>{itemName}</h2>
       </div>
       <div className="ItemCard__Category">
         <h4 className="ItemCard__Category__Text">{categoryText}</h4>
@@ -36,7 +41,7 @@ function ItemCard({ item, width = "450px", height = "240px" }) {
 }
 
 ItemCard.propTypes = {
-  item: PropTypes.object.isRequired,
+  url: PropTypes.string.isRequired,
   width: PropTypes.string,
   height: PropTypes.string,
 };

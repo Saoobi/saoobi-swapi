@@ -1,0 +1,56 @@
+.Content {
+  display: flex;
+  flex: 1;
+}
+
+.Item {
+  display: flex;
+  flex: 25;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+
+  &__c3poContainer {
+    display: flex;
+    margin-bottom: 10px;
+    &__imgContainer {
+      img {
+        width: 70px;
+      }
+    }
+    &__titleContainer {
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      padding-top: 15px;
+      color: $Title;
+    }
+  }
+
+  &__Data {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-top: 30px;
+    padding: 25px 30px 30px 70px;
+    border: 2px solid $Primary;
+    border-radius: 6px;
+
+    &__Category {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      color: $Primary;
+
+      &__Text {
+        margin-right: 20px;
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}

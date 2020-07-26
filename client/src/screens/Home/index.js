@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { searchItems } from "../../API/";
 import Input from "../../component/Input";
@@ -31,7 +31,6 @@ function Home({ match }) {
     } else {
       setResultSearch([]);
     }
-    console.log(resultSearch);
   }, [debouncedSearchValue]);
 
   function handleInputChange(e) {

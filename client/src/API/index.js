@@ -5,3 +5,11 @@ export async function searchItems(search) {
   if (response.status !== 200) throw Error(result.message);
   return result;
 }
+
+export async function getItemCategoryById(category, id) {
+  const response = await fetch(`/item/${category}/${id}`);
+  const result = await response.json();
+  if (response.status !== 200) throw Error(result.message);
+
+  return result;
+}

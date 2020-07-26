@@ -7,7 +7,7 @@ function ItemList({ items }) {
   return (
     <div className="ItemList">
       {items.map((item) => (
-        <ItemCard key={item.url} item={item} />
+        <ItemCard key={item.url} url={item.url} />
       ))}
     </div>
   );

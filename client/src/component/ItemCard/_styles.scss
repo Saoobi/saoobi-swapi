@@ -1,5 +1,6 @@
 .ItemCard {
   display: flex;
+  flex: 1;
   border: 2px solid $Primary;
   border-radius: 10px;
   flex-direction: column;
@@ -28,6 +29,7 @@
 
     &__Text {
       margin-right: 5px;
+      text-align: center;
     }
 
     img {
